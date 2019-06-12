@@ -1,0 +1,16 @@
+.livro{
+    padding:10px;
+    min-height: 350px;
+}
+
+.livro > img{
+    height:250px;
+}
+
+.livro > .titulo{
+    font-weight: bold;
+}
+
+#capa > img{
+    height: 800px;
+}
