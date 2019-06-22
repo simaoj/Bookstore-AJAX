@@ -1,3 +1,7 @@
+document.querySelector('#busca-btn').addEventListener("click", (event)=>{
+    event.preventDefault()
+});
+
 function buscaLivro(){
     var url = "https://www.googleapis.com/books/v1/volumes?q=";
     var input = document.querySelector("#query").value;
@@ -16,32 +20,43 @@ function mostrarTodosLivros(todos){
     document.querySelector('#listaLivros').innerHTML = '';
 
     var livros = todos.items;
-    var quebra_linha = 1;
 
-    document.querySelector("#listaLivros").innerHTML += "<div class='row'>";
     for(var i in livros){
         var id = livros[i].id;
         var livro = livros[i].volumeInfo;
 
         if(livro.imageLinks){
-            if(!quebra_linha%4){
-                document.querySelector("#listaLivros").innerHTML += "</div><div class='row'>";
+        }
 
-            }
+
+            
+
             
             var item = 
-            "<a href='livro.html?id="+id+"'>"+
-                "<div class='livro col-3'>"+
-                    "<img src='"+livro.imageLinks.thumbnail+"'>"+
-                    "<p class='titulo'>"+livro.title+"</p>"+
-                "</div>"+
-            "</a>";
+                '<div class="col-md-6">'
+                    +'<div class="card m-2s mb-2 livro">'
+                        +'<div class="row no-gutters">'
+                            +'<div class="col-md-4">'
+                                +`<img src="${livro.imageLinks.thumbnail}" class="card-img capa" alt="capa">`
+                            +'</div>'
+                                +'<div class="col-md-8">'
+                                    +'<div class="card-body">'
+                                        +`<a href='livro.html?id=${id}'>`
+                                            +`<h5 class="card-title">${livro.title}</h5>`
+                                        +'</a>'
+                                        +'<h5 class="card-text">R$ 20,00</h5>'
+                                        +`<a href='livro.html?id=${id}' class='btn btn-outline-danger stretched-link'>`
+                                            +'<i class="material-icons">shopping_cart</i> Adicionar ao Carrinho'
+                                        +'</a>'
+                                    +'</div>'
+                                +'</div>'
+                            +'</div>'
+                        +'</div>'
+                        +'</a>'
+                    +'</div>';
 
             document.querySelector("#listaLivros").innerHTML += item;
-            quebra_linha ++;
-        }
     }
-    document.querySelector("#listaLivros").innerHTML += "</div>";
 }
 
 function buscarLivroPorId(){

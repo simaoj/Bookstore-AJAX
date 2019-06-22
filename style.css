@@ -1,16 +1,26 @@
-.livro{
-    padding:10px;
-    min-height: 350px;
+#main-nav{
+    background: #ED5565;
+    border-top: #DA4453 solid 15pt;
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
 }
-
-.livro > img{
+.capa{
     height:250px;
 }
 
-.livro > .titulo{
-    font-weight: bold;
+.livro a {
+    font-weight: bolder;
+    color:#212529;
+}
+.livro a:hover{
+    text-decoration: none;
 }
 
-#capa > img{
-    height: 800px;
+.busca{
+    width: 700px;
+}
+
+@media only screen and (max-width:680px){
+    .capa{
+        height:auto;
+    }
 }
