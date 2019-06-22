@@ -1,23 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="grid.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body onload="buscarLivroPorId()">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>AJAX Bookstore</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body onload="buscarLivroPorId()">
 
-    <a href="index.html">Voltar</a>
+        <nav class="navbar navbar-expand-lg" id="main-nav">
+            <a class="navbar-brand" href="index.html">
+                <i class="material-icons">local_library
+                </i>
+                Bookstore</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <div class="container">
-        <div class="col-4" id="capa"></div>
-        <div class="col-8" id="info"></div>
-    </div>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <div class="navbar-nav justify-content-center d-flex flex-fill">
+                    <form action="busca.html" method="get">
+                        <div class="input-group busca">
+                            <input type="text" class="form-control" placeholder="Search" aria-label="Search" name="q">
+                            <div class="input-group-append">
+                                <button class="btn btn-light my-2 my-sm-0" type="submit" id="busca-btn">
+                                    <i class="material-icons">search</i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </nav>
 
+        <div class="container  content">
+            <div class="row">
+                <div class="col-4" id="capa"></div>
+                <div class="col-8">
+                    <div class="card">
+                        <div class="card-body" id="info"></div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body price">
+                            <p class='old'>$119.90</p>
+                            <p class='new h2'>$43,98</p>
+                            <div class='credit-card'>
+                                <i class="material-icons">credit_card</i>
+                                <p>
+                                    Get 10% off using
+                                    <b>Bookstore card</b>
+                                    <br>
+                                    and pay only $39.99</p>
+                            </div>
+                            <button class='btn btn-danger btn-block'>
+                                Buy now
+                            </button>
+                            <button class='btn btn-outline-danger btn-block'>
+                                <i class="material-icons">shopping_cart</i>
+                                Add to my cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <script src="script.js"></script>    
-</body>
+        <footer class="footer">
+            <div class="container">
+                <span class="text-muted">Fake website made for the 2019.1 Internet Programming I class at the Federal Institute of Santa Catarina - Câmpus Tubarão. </span>
+            </div>
+            <div class="copyleft">
+                <span>José Pedro Simão - 2019</span>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
 </html>
